@@ -14,18 +14,34 @@ const pubsub = new PubSub({
 
 
 const subscriptionName = 'appointment-subscription';
-const subscription = pubsub.subscription(subscriptionName);
 
-const messageHandler = message => {
-  console.log(`Received message: ${message.id}:`);
-  console.log(`\tData: ${message.data}`);
-  console.log(`\tAttributes: ${message.attributes}`);
 
-  // Acknowledge the message
-  message.ack();
-};
+function listenForMessages() {
+  // References an existing subscription
+  const subscription = pubsub.subscription(subscriptionName);
 
-subscription.on('message', messageHandler);
+  // Create an event handler to handle messages
+  let messageCount = 0;
+  const messageHandler = message => {
+    console.log(`Received message ${message.id}:`);
+    console.log(`\tData: ${message.data}`);
+    console.log(`\tAttributes: ${message.attributes}`);
+    messageCount += 1;
+
+    // "Ack" (acknowledge receipt of) the message
+    message.ack();
+  };
+
+  // Listen for new messages until timeout is hit
+  subscription.on('message', messageHandler);
+
+  setTimeout(() => {
+    subscription.removeListener('message', messageHandler);
+    console.log(`${messageCount} message(s) received.`);
+  }, timeout * 1000);
+}
+
+listenForMessages();
 
 app.get('/', (req, res) => {
   res.status(200).send("I am  here");
