@@ -21,7 +21,7 @@ function listenForMessages() {
   const subscription = pubsub.subscription(subscriptionName);
 
   // Create an event handler to handle messages
-  let messageCount = 0;
+  
   const messageHandler = message => {
     console.log(`Received message ${message.id}:`);
     console.log(`\tData: ${message.data}`);
@@ -35,10 +35,7 @@ function listenForMessages() {
   // Listen for new messages until timeout is hit
   subscription.on('message', messageHandler);
 
-  setTimeout(() => {
-    subscription.removeListener('message', messageHandler);
-    console.log(`${messageCount} message(s) received.`);
-  }, timeout * 1000);
+ 
 }
 
 listenForMessages();
