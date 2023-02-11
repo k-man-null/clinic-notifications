@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "zendeta",
+    "private_key_id": "e10e4d0f28cf9748c993c7900df12b4420aaba60",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBL5uWvRedQqND\n8e3PkQ1R+Fr0LpJn2O7F/CouW/B8TUgbxkxLiaBR0OIg30evSkkiOx7Vnz4fjhWE\naQfkQBLii+oYCVC8kpjdhT0ppqYPLUwlLDSWxGiwIET6xasw62P8wGALOHza6frJ\ntcKCk6P+3CJrumLlLM2OdQkO+KeC0e0m4blIBovCwxz+LzjD7hYnaOyBernf2sid\n6/lfG/HD6/i5VHuBjv50v7JvF+n95uHhVWOSLYxVjF/Ln70cGc5wms33Yg69z0NN\nhg3lc0ewJ45dxt9oBgYEjRydTcStZ8KjcaL/uVLYYM8PIKHDnPwsxXbSbBQMVc+k\nFMgljWEnAgMBAAECggEAE9aZua8NX77aGT4c17XjkklYvb6Slkt2qaotgrk6RumA\nwClq6E7nwb8bmZiUOfH89KDxl6pUrNTgbMqEXvIdfloz3egG/HZpcEYgc8iDQQe7\nzA1wERN2VK/bpYzq+YkSqX/v3PceCzT/5freUJ5stt1QQ5POWA5zxW9LUNhEC3Dp\npstoh+vdEqFUBn/3sDWQR5u7puWGN2mSjoo+bG4nuxU+hZQlyHFVIBH6F/E1oXFJ\nPpm/WtiHK4q04S+XFRunRxYpRFeLr68VtjV28uijRIxdodZANm2p86stNpaAIBLy\n8SxO1+H488ZauM6pQJ1WgbXfueUVdgl5uFuLrxVX4QKBgQDff7W7l2Y/Dat4uqZJ\nT2GN34oCBCAVZYi8y9lZnp2ol3VDhg5XAqBZ9s1vi9SSWlYgnMfAWpd4ZGrwBl66\needUJBuE+wuTtUc+2OGGoorjViedAUQDueAu2FtKWrwIfIKKuZyvLhMhS29yingg\naK+XDEP8y9BXQ5cKebPju/xxqQKBgQDdR20jhp3TzUUI66p6cRPuaG5tA6lqjCFv\nGN7HXM9gyV+/XQPT1NtpU5r+kszBDqW55IGLAILA8F/hSCpAwxxTF0O0AdxMp87K\n0OExqQTqDN8SER9/1ERou9yUzG6i6VeGHb68u1PYoDd8WbKyh1WAjQ21X/fkOcKo\ny4m+gICeTwKBgQC+SwZ5CpdL6F+vE3yxvpzZJxNiVBDdJu4dkZMl8x9ZhFubenCL\nNPlCoBiaePwtAC2E5vhMltWQ9C743vOY4mJMCdJEj1t0EEzw/chH0e1fUuO3knRO\nl9yBBkX0MP0YXKrpYtA9d4ViO9BQPgW50mhuu0rH2uEw66OWj7jSliSCwQKBgQC6\nvQtqnrFUy/dFhvRwrjr+yFzgXOW9SBLzGc7v+e/8oxTNfua6/vhHU8oKqsJm7kCH\nt0Jnlv/BaVnQ2cDmtIGT0Z9OKv/KJReL62kQKq4+AqzCJ3covm8Y3+lQHZIEo908\nDqAn0AL7XoJUy7HVngZXHTKDbUDa9q/DGTnebb2dWwKBgFtKiYfeCrF7UJv78sQk\ny+AYQPkdLQPP2aTMs6kgn+98eiQsE9lKAwLLeKnLYOl1DyWn3eyy5muBaiNWGraU\nk887VvADuiNfTf7tFVG0GA7ADPJrmXMO55Hu+1j2aZg0TPjFKL8kS1ayTvFlkfMU\nsRXd4hNwQ/Y6fpZfm6Sjbwn6\n-----END PRIVATE KEY-----\n",
+    "client_email": "cloud-publisher@zendeta.iam.gserviceaccount.com",
+    "client_id": "118414050114121892709",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-publisher%40zendeta.iam.gserviceaccount.com"
+  }

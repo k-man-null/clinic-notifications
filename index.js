@@ -7,22 +7,25 @@ const io = new Server(server);
 
 const { PubSub } = require('@google-cloud/pubsub');
 
-const pubsub = new PubSub();
-
-const subscription =  pubsub.subscription("appointment-subscription")
-
-subscription.on('message', message => {
-  console.log('Received message:', message.data.toString());
-  process.exit(0);
+const pubsub = new PubSub({
+  projectId: 'zendeta',
+  keyFilename: './keyfile.json'
 });
 
 
-subscription.on('error', error => {
-  console.error('Received error:', error);
-  process.exit(1);
-});
+const subscriptionName = 'appointment-subscription';
+const subscription = pubsub.subscription(subscriptionName);
 
+const messageHandler = message => {
+  console.log(`Received message: ${message.id}:`);
+  console.log(`\tData: ${message.data}`);
+  console.log(`\tAttributes: ${message.attributes}`);
 
+  // Acknowledge the message
+  message.ack();
+};
+
+subscription.on('message', messageHandler);
 
 app.get('/', (req, res) => {
   res.status(200).send("I am  here");
