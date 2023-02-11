@@ -9,7 +9,7 @@ const { PubSub } = require('@google-cloud/pubsub');
 
 const pubsub = new PubSub();
 
-const subscription =  pubsub.createSubscription("appointment-subscription")
+const subscription =  pubsub.subscription("appointment-subscription")
 
 subscription.on('message', message => {
   console.log('Received message:', message.data.toString());
