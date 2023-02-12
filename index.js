@@ -11,44 +11,6 @@ const io = new Server(server, {
 app.use(express.json())
 
 
-//below code is for pull subscription
-// // const { PubSub } = require('@google-cloud/pubsub');
-
-// // const pubsub = new PubSub({
-// //   projectId: 'zendeta',
-// //   keyFilename: './keyfile.json'
-// // });
-
-
-// // const subscriptionName = 'appointment-subscription';
-
-
-// // function listenForMessages() {
-// //   // References an existing subscription
-// //   const subscription = pubsub.subscription(subscriptionName);
-
-// //   // Create an event handler to handle messages
-
-// //   const messageHandler = message => {
-// //     console.log(`Received message ${message.id}:`);
-// //     console.log(`\tData: ${message.data}`);
-// //     console.log(`\tAttributes: ${message.attributes}`);
-
-
-// //     // "Ack" (acknowledge receipt of) the message
-// //     message.ack();
-// //   };
-
-// //   // Listen for new messages until timeout is hit
-// //   subscription.on('message', messageHandler);
-
-
-// // }
-
-// // listenForMessages();
-
-//push subscription
-
 app.post('/pub-sub-messages', (req, res) => {
   if (!req.body) {
     const msg = 'no Pub/Sub message received';
@@ -77,15 +39,19 @@ app.get('/', (req, res) => {
   res.status(200).send("I am  here");
 });
 
+app.get('/loaderio-fe5eb697f4aec4c31ea57440ad085d40' , (req,res) => {
+  res.status(200).send("loaderio-fe5eb697f4aec4c31ea57440ad085d40");
+})
+
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  const numClients = Object.keys(io.sockets.connected).length;
+  
 
   socket.on('client to server event', () => {
     console.log('client to server event');
 
-    io.emit('server to client event', numClients);
+    io.emit('server to client event');
 
   });
 
