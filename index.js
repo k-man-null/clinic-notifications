@@ -28,12 +28,12 @@ app.use(express.json())
 // //   const subscription = pubsub.subscription(subscriptionName);
 
 // //   // Create an event handler to handle messages
-  
+
 // //   const messageHandler = message => {
 // //     console.log(`Received message ${message.id}:`);
 // //     console.log(`\tData: ${message.data}`);
 // //     console.log(`\tAttributes: ${message.attributes}`);
-    
+
 
 // //     // "Ack" (acknowledge receipt of) the message
 // //     message.ack();
@@ -42,7 +42,7 @@ app.use(express.json())
 // //   // Listen for new messages until timeout is hit
 // //   subscription.on('message', messageHandler);
 
- 
+
 // // }
 
 // // listenForMessages();
@@ -68,7 +68,8 @@ app.post('/pub-sub-messages', (req, res) => {
     ? Buffer.from(pubSubMessage.data, 'base64').toString().trim()
     : 'World';
 
-  console.log(`Hello ${name}!`);
+
+  console.log(pubSubMessage);
   res.status(204).send();
 });
 
@@ -78,6 +79,14 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+
+  socket.on('client to server event', () => {
+    console.log('client to server event');
+
+    io.emit('server to client event');
+
+  });
+
 });
 
 server.listen(8000, () => {
