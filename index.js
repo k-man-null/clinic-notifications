@@ -80,10 +80,12 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('a user connected');
 
+  const numClients = Object.keys(io.sockets.connected).length;
+
   socket.on('client to server event', () => {
     console.log('client to server event');
 
-    io.emit('server to client event');
+    io.emit('server to client event', numClients);
 
   });
 
