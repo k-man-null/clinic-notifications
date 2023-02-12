@@ -8,6 +8,8 @@ const io = new Server(server, {
   cors: true
 });
 
+app.use(express.json())
+
 
 //below code is for pull subscription
 // // const { PubSub } = require('@google-cloud/pubsub');
